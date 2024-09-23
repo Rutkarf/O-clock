@@ -1,0 +1,170 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.minuteur-container {
+  width: 300px;
+  height: 300px;
+  background-color: #333;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#temps-input {
+  width: 100%;
+  height: 40px;
+  background-color: #34495e;
+  border: none;
+  border-radius: 10px;
+  color: #ecf0f1;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#temps-restant {
+  font-size: 64px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.aiguille {
+  position: absolute;
+  width: 2px;
+  background-color: #fff;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease;
+}
+
+.aiguille-heures {
+  height: 80px;
+  transform: rotate(0deg);
+}
+
+.aiguille-minutes {
+  height: 110px;
+  transform: rotate(0deg);
+}
+
+.aiguille-secondes {
+  height: 130px;
+  transform: rotate(0deg);
+  background-color: #ff0000;
+}
+
+.cercle {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.cercle-intérieur {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.chiffres {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.chiffre-12 { top: 10px; }
+.chiffre-3 { right: 10px; }
+.chiffre-6 { bottom: 10px; }
+.chiffre-9 { left: 10px; }
+
+.controles {
+  background-color: #2c3e50;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+.boutons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#augmenter-temps, #diminuer-temps {
+  background-color: #3498db;
+  color: white;
+}
+
+#augmenter-temps:hover, #diminuer-temps:hover {
+  background-color: #2980b9;
+}
+
+#demarrer-minuteur, #stop-minuteur {
+  width: 120px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#demarrer-minuteur {
+  background-color: #2ecc71;
+  color: white;
+}
+
+#demarrer-minuteur:hover {
+  background-color: #27ae60;
+}
+
+#stop-minuteur {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#stop-minuteur:hover {
+  background-color: #c0392b;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes countdown {
+  0% { color: #ecf0f1; }
+  50% { color: #e74c3c; }
+  100% { color: #ecf0f1; }
+}
+
+.countdown-animation {
+  animation: countdown 1s infinite;
+}
